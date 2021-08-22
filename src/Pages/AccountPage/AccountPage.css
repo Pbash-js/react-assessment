@@ -1,0 +1,11 @@
+.radio-button:checked + .radio-checked {
+  background-color: black;
+}
+
+.text-xxs {
+  font-size: 0.6rem;
+}
+
+.border-b-1 {
+  border-bottom: 1px solid lightgray;
+}

@@ -7,10 +7,39 @@ import "react-calendar/dist/Calendar.css";
 import reportWebVitals from "./reportWebVitals";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "slick";
+
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import CategoryPage from "./Pages/CateogryPage/index";
+import ProductPage from "./Pages/ProductPage";
+import PincodePage from "./Pages/PincodePage";
+import AccountPage from "./Pages/AccountPage/AccountPage";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <Router>
+        <Switch>
+          <Route path="/pincode">
+            <PincodePage />
+          </Route>
+          <Route path="/product">
+            <ProductPage />
+          </Route>
+          <Route path="/category">
+            <CategoryPage />
+          </Route>
+          <Route path="/account">
+            <AccountPage />
+          </Route>
+          <Route path="/">
+            <App />
+          </Route>
+        </Switch>
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
